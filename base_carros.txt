@@ -1,0 +1,21 @@
+create database carros;
+use carros;
+
+CREATE TABLE Carros (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    marca VARCHAR(50) NOT NULL,
+    modelo VARCHAR(50) NOT NULL
+);
+
+-- Inserir marcas e modelos de carro
+INSERT INTO Carros (marca, modelo) VALUES
+('Toyota', 'Corolla'),
+('Toyota', 'Hilux'),
+('Honda', 'Civic'),
+('Honda', 'Accord'),
+('Ford', 'Mustang'),
+('Ford', 'Focus'),
+('Chevrolet', 'Onix'),
+('Chevrolet', 'Cruze'),
+('Volkswagen', 'Gol'),
+('Volkswagen', 'Polo');
