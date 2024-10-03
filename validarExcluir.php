@@ -8,8 +8,7 @@
 <body>
   <?php
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-      $marca = $_POST["marca"];
-      $modelo = $_POST["modelo"];
+      $id = $_POST["id"];
       // Conexão com banco
       $host  = "localhost:3306";
       $user  = "root";
@@ -17,15 +16,15 @@
       $base  = "carros";
       $conexao  = mysqli_connect($host, $user, $pass, $base);
       // Query
-      $input = mysqli_query($conexao, "INSERT INTO Carros (marca, modelo) VALUES ('$marca', '$modelo');");
-      mysqli_close($conexao); // Encerrando conexão com o banco
-      echo "<center><h1>Cadastro realizado</h1></center>";
-      // script para redirecionar o user para a pagina de exibição da tablela
+      $input = mysqli_query($conexao, "DELETE FROM Carros WHERE id = '$id'");
+      mysqli_close($conexao); // Encerrando a conexão com o banco
+      echo "<center><h1>Exclusão bem sucedida!!</h1></center>";
+      // Script para redirecionar o user para a pagina de exibição da tablela
       echo 
       "<script>
-          setTimeout(function() {
+        setTimeout(function() {
           window.location.href = \"http://localhost/integracao_BD_php/exibir.php\";
-          }, 1000);
+        }, 1000);
       </script>";
     }
   ?>
